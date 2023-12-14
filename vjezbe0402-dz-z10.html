@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+  function addNewParagraphs() {
+    const thisLocation = document.getElementById("thisLocation");
+    
+    const newParagraph1 = document.createElement("p");
+    const newParagraph2 = document.createElement("p");
+    
+    newParagraph1.textContent = "Novi paragraf teksta 1";
+    newParagraph2.textContent = "Novi paragraf teksta 2";
+
+    thisLocation.parentNode.insertBefore(newParagraph1, thisLocation.nextSibling);
+    thisLocation.parentNode.insertBefore(newParagraph2, thisLocation.nextSibling);
+  }
+</script>
+</head>
+<body>
+<p><a href="#" onclick="addNewParagraphs()">Kliknite ovdje da dodate novi paragraf teksta</a></p>
+<p id="thisLocation">Novi paragrafi teksta će se pojaviti ispod</p>
+<p>Ovo je defaultni prvi paragraf teksta</p>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>3. zadatak</title>
+</head>
+<body>
+
+<form id="gradeForm">
+  <label for="gradeInput">Unesite ocjenu (od 1 do 5):</label>
+  <input type="number" id="gradeInput" min="1" max="5">
+  <button type="submit">Provjeri ocjenu</button>
+</form>
+
+<script>
+  function checkGrade(event) {
+    const grade = parseInt(document.getElementById("gradeInput").value, 10);
+
+    switch (grade) {
+      case 1:
+        alert("Ocjena: Nedovoljan");
+        break;
+      case 2:
+        alert("Ocjena: Dovoljan");
+        break;
+      case 3:
+        alert("Ocjena: Dobar");
+        break;
+      case 4:
+        alert("Ocjena: Vrlo dobar");
+        break;
+      case 5:
+        alert("Ocjena: Odličan");
+        break;
+      default:
+        alert("Molimo unesite ocjenu od 1 do 5!");
+    }
+  }
+
+  document.getElementById("gradeForm").addEventListener("submit", checkGrade);
+</script>
+
+</body>
+</html>

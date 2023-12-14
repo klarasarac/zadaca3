@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>7 . zadatak/title>
+</head>
+<body>
+
+<form id="ageCalculator">
+  <label for="birthdate">Unesite datum rođenja:</label>
+  <input type="date" id="birthdate">
+  <label for="birthyear">Unesite godinu rođenja:</label>
+  <input type="number" id="birthyear" min="1900" max="2023">
+  <button type="button" onclick="calculateAge()">Izračunaj</button>
+</form>
+
+<script>
+  function calculateAge() {
+    const birthdate = new Date(document.getElementById("birthdate").value);
+    const birthyear = parseInt(document.getElementById("birthyear").value, 10);
+    const currentDate = new Date();
+    const currentYear = currentDate.getFullYear();
+
+    if (!isNaN(birthdate.getTime()) && !isNaN(birthyear)) {
+      const age = currentYear - birthyear;
+
+      if (birthdate.getMonth() > currentDate.getMonth() || 
+          (birthdate.getMonth() === currentDate.getMonth() && birthdate.getDate() > currentDate.getDate())) {
+        alert(`Imate ${age - 1} godina.`);
+      } else {
+        alert(`Imate ${age} godina.`);
+      }
+    } else {
+      alert("Molimo unesite valjani datum i godinu rođenja.");
+    }
+  }
+</script>
+
+</body>
+</html>

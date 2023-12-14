@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>9. zadatak</title>
+</head>
+<body>
+
+<h1>Prekidač za žarulju</h1>
+
+<div id="switchContainer">
+  <button id="switch" onclick="toggleLight()">OFF</button>
+
+  <img id="lightBulb" src="zarulja_off.png" alt="ugasena_zarulja">
+</div>
+
+<script>
+  function toggleLight() {
+    const switchBtn = document.getElementById("switch");
+    const lightBulb = document.getElementById("lightBulb");
+
+    if (switchBtn.innerText === "OFF") {
+      switchBtn.innerText = "ON";
+      lightBulb.setAttribute("src", "zarulja_on.png");
+    } else {
+      switchBtn.innerText = "OFF";
+     lightBulb.setAttribute("src", "zarulja_off.png");
+    }
+  }
+</script>
+
+</body>
+</html>

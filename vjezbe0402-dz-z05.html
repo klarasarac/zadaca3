@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>5. zadatak</title>
+</head>
+<body>
+
+<form id="registrationForm">
+  <label for="registrationPlate">Unesite registarsku oznaku vozila (npr. ABC 123):</label>
+  <input type="text" id="registrationPlate">
+  <button type="button" onclick="validateRegistrationPlate()">Validacija</button>
+</form>
+
+<script>
+  function validateRegistrationPlate() {
+    const plateInput = document.getElementById("registrationPlate").value.toUpperCase(); 
+    const plateRegex = /^[A-ZČĆŠĐŽ]{2}\s\d{3}\s[A-ZČĆŠĐŽ]{2}$/; 
+
+    if (plateRegex.test(plateInput)) {
+      alert("Ispravna registarska oznaka vozila BiH.");
+      return true;
+    } else {
+      alert("Neispravan format registarske oznake vozila BiH!");
+      return false;
+    }
+  }
+</script>
+
+</body>
+</html>

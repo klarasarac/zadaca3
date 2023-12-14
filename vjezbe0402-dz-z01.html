@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>1. zadatak</title>
+</head>
+<body>
+
+<script>
+  function aritmetickaSredina(numbers) {
+    const sum = numbers.reduce((acc, num) => acc + num, 0);
+    return sum / numbers.length;
+  }
+
+  function geometrijskaSredina(numbers) {
+    const product = numbers.reduce((acc, num) => acc * num, 1);
+    return Math.pow(product, 1 / numbers.length);
+  }
+
+  function getNumbers() {
+    const input = prompt("Unesite brojeve odvojene zarezom (npr. 1, 4, 16):");
+    const numbers = input.split(",").map(num => parseInt(num.trim(), 10));
+    return numbers;
+  }
+
+  
+  function calculateAndDisplay() {
+    const numbers = getNumbers();
+
+    const aritmeticka = aritmetickaSredina(numbers);
+    const geometrijska = geometrijskaSredina(numbers);
+
+    const resultContainer = document.createElement("div");
+    resultContainer.innerHTML = `
+      <p>Aritmetička sredina: ${aritmeticka.toFixed(2)}</p>
+      <p>Geometrijska sredina: ${geometrijska.toFixed(2)}</p>
+    `;
+
+    document.body.appendChild(resultContainer);
+  }
+
+  
+  calculateAndDisplay();
+</script>
+
+</body>
+</html>
